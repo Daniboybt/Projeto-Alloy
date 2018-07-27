@@ -100,6 +100,32 @@ pred semCanaisRepetidos[tv:TV]{
     #(tv.canais & ProgramasDeTV ) < 2
 }
 
+assert todoAssinanteTemUmPlano{
+    all a:Assinante | #(a.plano) = 1
+}
+
+assert todoPlanoTemServico{
+    all p:Plano | #(p.servicos) >= 1
+}
+
+assert todaTVTemCanal{
+    all tv:TV | some tv.canais
+}
+
+assert todaInternetTemUmaVelocidade{
+    all i:Internet | one i.velocidade
+}
+
+assert todoTelefoneTemUmPlanoDeLigacao{
+    all t:Telefone | one t.planoLigacao
+}
+
+check todoAssinanteTemUmPlano for 5
+check todoPlanoTemServico for 5
+check todaTVTemCanal for 5
+check todaInternetTemUmaVelocidade for 5
+check todoTelefoneTemUmPlanoDeLigacao for 5
+
 pred show[]{}
  
 run show for 5
