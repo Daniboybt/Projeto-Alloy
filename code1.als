@@ -1,45 +1,71 @@
+﻿/* Integrantes:
+   Daniel Barreto Torres
+   Izaquiel Nascimento
+   Axél Medeiros
+   Lucas Aires
+*/
+	
 module telecomunicacoes
- 
+
+// Representação da empresa fornecedora dos serviços 
 one sig Empresa{
     assinantes: set Assinante
 }
- 
+
+// Representação dos clientes(assinantes de um plano)
 sig Assinante{
     plano: one Plano
 }
- 
+
+// Representação abstrata dos planos individuais consumidos pelos assinantes
 abstract sig Plano{
     servicos: set Servico
 }
- 
+
+// Plano que só oferece um serviço
 sig Simple extends Plano{}
+
+// Plano que oferece dois tipos de serviços
 sig Double extends Plano{}
+
+// Plano que oferece os três tipos de serviços oferecidos
 sig Combo extends Plano{}
- 
+
+// Representação abstrata de um serviço 
 abstract sig Servico{}
- 
+
+// Representação do serviço de tv oferecido pela empresa
 sig TV extends Servico{
     canais: some CanalTV
 }
- 
+
+// representação do servico de internet
 sig Internet extends Servico{
     velocidade: one Velocidade
 }
- 
+
+// Representação do serviço de telefone 
 sig Telefone extends Servico{
     planoLigacao: one PlanoLigacoes
 }
  
- 
+// Representação abstrata de um canal
 abstract sig CanalTV{}
+
+//Canais que podem ser incorporados ao serviço de tv
 sig Noticias, Infantis, Filmes, Documentarios, Series, ProgramasDeTV extends CanalTV{}
- 
+
+// Representação abstrata de um plano de telefone
 abstract sig PlanoLigacoes{}
+
+// Planos telefônicos oferecidos
 sig LimitadoLocal, IlimitadoLocal, IlimitadoBrasil, IlimitadoMundo extends PlanoLigacoes{}
- 
+
+// Representação abstrata de uma velocidade de internet 
 abstract sig Velocidade{}
+
+// Velocidades de internet oferecidas
 sig V5Megas, V35Megas, V60Megas, V120Megas extends Velocidade{}
- 
  
 fact {
     -- Não existe assinante sem conexão com a empresa
