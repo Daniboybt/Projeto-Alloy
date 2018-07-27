@@ -80,6 +80,12 @@ fact {
     all tv:TV | #(tv.canais & Documentarios ) < 2
     all tv:TV | #(tv.canais & Series ) < 2
     all tv:TV | #(tv.canais & ProgramasDeTV ) < 2
+
+    all i:Internet | #(i.velocidade & V5Megas) < 2
+    all i:Internet | #(i.velocidade & V35Megas) < 2
+    all i:Internet | #(i.velocidade & V60Megas) < 2
+    all i:Internet | #(i.velocidade & V120Megas) < 2
+        
 }
  
 pred show[]{}
