@@ -1,8 +1,8 @@
 ﻿/* Integrantes:
-   Daniel Barreto Torres
-   Izaquiel Nascimento
-   Axél Medeiros
-   Lucas Aires
+ * Daniel Barreto Torres
+ * Izaquiel Nascimento
+ * Axél Medeiros
+ * Lucas Aires
 */
 	
 module telecomunicacoes
