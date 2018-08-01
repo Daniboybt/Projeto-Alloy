@@ -1,8 +1,11 @@
-﻿/* Integrantes:
+/* Integrantes:
  * Daniel Barreto Torres
  * Izaquiel Nascimento
  * Axél Medeiros
  * Lucas Aires
+ *
+ * Tema 25: Empresa de Telecomunicações
+ * Cliente: Kyler
 */
 	
 module telecomunicacoes
